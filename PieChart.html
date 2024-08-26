@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pie Chart</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div style="width:400px;">
+<canvas id="myChart"></canvas>
+</div>
+<script>
+  var ctx = document.getElementById('myChart');
+  var mychart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Vanilla Glaze','Chocolate Glaze','Old Fashion','Maple','Jelly-Filled','Powdered Sugar'],
+      datasets: [{
+        label: 'My First Donut Today',
+        data: [300, 50, 200,25,250,30],
+        backgroundColor: [
+          'rgb(163,99,73)',
+          'rgb(27,11,11)',
+          'rgb(177,174,106)',
+          'rgb(255,121,0)',
+          'rgb(223,120,120)',
+          'rgb(128,123,118)'
+        ],
+        hoverOffset: 1
+      }]
+    }
+
+  });
+  </script>
+<div style="width:400px;">
+    <canvas id="myChart2"></canvas>
+</div>
+<script>
+  var cty = document.getElementById('myChart2');
+  var mychart = new Chart(cty, {
+    type: 'pie',
+    data: {
+      labels: ['Milk', 'Lemonade', 'Apple Juice','Orange Juice','Water','Grape Juice'],
+      datasets: [{
+        label: 'My First Drink Today',
+        data: [300, 50, 200,450,600,100],
+        backgroundColor: [
+          'rgb(181,166,168)',
+          'rgb(240,231,50)',
+          'rgb(255,200,80)',
+          'rgb(255,117,0)',
+          'rgb(99,255,226)',
+          'rgb(70,8,97)'
+        ],
+        hoverOffset: 1
+      }]
+    }
+
+  });
+
+</script>
+<div style="width:400px;">
+  <canvas id="myChart3"></canvas>
+</div>
+<script>
+  var ctz = document.getElementById('myChart3');
+  var mychart = new Chart(ctz, {
+    type: 'polarArea',
+    data:{
+      labels:['Honda','Toyota','Hyundai','Mercedes',"Corvette","Ferrari"],
+      datasets:[{
+        label:'Amount of Car Brands in Fresno',
+        data:[3000,2500,2000,1000,500,250],
+        backgroundColor:[
+          'rgb(21,2,8)',
+          'rgb(147,59,59)',
+          'rgb(115,112,105)',
+          'rgb(144,182,182)',
+          'rgb(240,231,50)',
+          'rgb(255,0,0)',
+        ]
+      }]
+    }
+  });
+
+</script>
+</body>
+</html>
