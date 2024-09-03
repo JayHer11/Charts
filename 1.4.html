@@ -2,9 +2,194 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Project 1.4</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
 </head>
 <body>
+<p> United States Census Bureau
+    31.32 million (1994),
+    31.49 million (1995),
+    31.78 million (1996),
+    32.22 million (1997),
+    32.68 million (1998),
+    33.15 million (1999),
+    33.99 million (2000),
+    34.48 million (2001),
+    34.87 million (2002),
+    35.25 million (2003),
+    35.57 million (2004),
+    35.83 million (2005),
+    36.02 million (2006),
+    Data.gov
+    36,250,311(2007),
+    36,604,337(2008),
+    36,961,229(2009),
+    37,319,550(2010),
+    37,636,311,(2011),
+    37,944,551(2012),
+    38,253,768(2013),
+    38,586,706(2014),
+    38,904,296(2015),
+    39,149,186(2016),
+    39,358,497(2017),
+    39,461,588(2018),
+    39,512,223(2019),
+    United States Census Bureau
+    39.37 million(2020),
+    39.24 million(2021),
+    39.03 million(2022),
+    38,965,193(2023),
+    39,128,162 (2024),
 
+</p>
+<canvas id="mychart" style ='max-width: 1000px; max-height: 400px;'></canvas>
+<script>
+    var ctx = document.getElementById('mychart');
+    var mychart = new Chart(ctx,{
+        type:'line',
+        data:{
+            labels:['1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            datasets:[{
+                data:[31.32, 31.49, 31.78, 32.22, 32.68, 33.15, 33.99, 34.48, 34.87, 35.25, 35.57, 35.83, 36.02, 36.25, 36.60, 36.96, 37.32, 37.64, 37.94, 38.25, 38.59, 38.90, 39.15, 39.36, 39.46, 39.51, 39.24, 39.03, 38.97, 39.13],
+                label: 'California Population by Millions',
+                borderColor: 'rgb(240,231,50)',
+                backgroundColor:'rgba(240,231,50,0.3)'
+            }
+                ]
+        },
+        options:{
+            plugins:{
+                title:{
+                    display:true,
+                    text:'Annual Population In California'
+                },
+                legend:{
+                    position: 'left'
+                }
+            }
+        }
+    });
+</script>
+<div style = 'width : 1000px; height: 1000px;'>
+    <canvas id="myChart2"></canvas>
+</div>
+<script>
+    var cty = document.getElementById('myChart2');
+    var myChart2 = new Chart(cty, {
+        type: 'bar',
+        data:{
+            labels: ['1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            datasets:[{
+                label: 'California Population by Millions',
+                data: [31.32, 31.49, 31.78, 32.22, 32.68, 33.15, 33.99, 34.48, 34.87, 35.25, 35.57, 35.83, 36.02, 36.25, 36.60, 36.96, 37.32, 37.64, 37.94, 38.25, 38.59, 38.90, 39.15, 39.36, 39.46, 39.51, 39.24, 39.03, 38.97, 39.13],
+                backgroundColor: [
+                    'rgba(255,99,132,0.2)',  // Light pink
+                    'rgba(54,162,235,0.2)',  // Light blue
+                    'rgba(255,206,86,0.2)',  // Light yellow
+                    'rgba(75,192,192,0.2)',  // Light teal
+                    'rgba(153,102,255,0.2)', // Light purple
+                    'rgba(255,159,64,0.2)',  // Light orange
+                    'rgba(255,105,180,0.2)', // Light hot pink
+                    'rgba(0,191,255,0.2)',   // Light deep sky blue
+                    'rgba(34,193,195,0.2)',  // Light turquoise
+                    'rgba(253,187,45,0.2)'   // Light golden yellow
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',    // Pink
+                    'rgba(54,162,235,1)',    // Blue
+                    'rgba(255,206,86,1)',    // Yellow
+                    'rgba(75,192,192,1)',    // Teal
+                    'rgba(153,102,255,1)',   // Purple
+                    'rgba(255,159,64,1)',    // Orange
+                    'rgba(255,105,180,1)',   // Hot pink
+                    'rgba(0,191,255,1)',     // Deep sky blue
+                    'rgba(34,193,195,1)',    // Turquoise
+                    'rgba(253,187,45,1)'     // Golden yellow
+                ],
+                borderWidth: 5
+            }]
+        },
+        options: {
+            scales:{
+                y:{beginAtZero : true}
+            },
+            indexAxis : "y",
+            plugins:{
+                title:{
+                    display:true,
+                    text:'Annual Population In California'
+                }
+            }
+        }
+    });
+</script>
+<canvas id="chart2" style="max-width:1000px; max-height:1000px;"></canvas>
+<script>
+    var cty = document.getElementById('chart2')
+    var nextChart = new Chart(cty,{
+        type:'scatter',
+        data:{
+            datasets:[{
+                label:'California Population By Millions',
+                backgroundColor:'rgba(225,200,50,1',
+                pointBackgroundColor:'rgba(225,200,50,1)',
+                pointRadius: 4,
+                data: [
+                    {x: '1994', y: 31.32},
+                    {x: '1995', y: 31.49},
+                    {x: '1996', y: 31.78},
+                    {x: '1997', y: 32.22},
+                    {x: '1998', y: 32.68},
+                    {x: '1999', y: 33.15},
+                    {x: '2000', y: 33.99},
+                    {x: '2001', y: 34.48},
+                    {x: '2002', y: 34.87},
+                    {x: '2003', y: 35.25},
+                    {x: '2004', y: 35.57},
+                    {x: '2005', y: 35.83},
+                    {x: '2006', y: 36.02},
+                    {x: '2007', y: 36.25},
+                    {x: '2008', y: 36.60},
+                    {x: '2009', y: 36.96},
+                    {x: '2010', y: 37.32},
+                    {x: '2011', y: 37.64},
+                    {x: '2012', y: 37.94},
+                    {x: '2013', y: 38.25},
+                    {x: '2014', y: 38.59},
+                    {x: '2015', y: 38.90},
+                    {x: '2016', y: 39.15},
+                    {x: '2017', y: 39.36},
+                    {x: '2018', y: 39.46},
+                    {x: '2019', y: 39.51},
+                    {x: '2020', y: 39.24},
+                    {x: '2021', y: 39.03},
+                    {x: '2022', y: 38.97},
+                    {x: '2023', y: 39.13},
+                    {x: '2024', y: null} // Assuming no data for 2024
+                ]
+
+
+            }
+            ]
+        },
+        options:{
+            scales:{
+                xAxis:{
+                    beginAtZero: false
+                },
+                yAxis:{
+                    beginAtZero: false
+                }
+            },
+            plugins:{
+                title:{
+                    display:true,
+                    text:'Annual Population In California'
+                }
+            }
+        },
+    });
+</script>
 </body>
 </html>
